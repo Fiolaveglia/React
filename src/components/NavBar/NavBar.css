@@ -1,0 +1,15 @@
+* {
+    font-family: 'Recoleta';
+    color: #66806A;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+nav>img {
+    width: 100px;
+}
+button {
+    margin: 20px;
+}
