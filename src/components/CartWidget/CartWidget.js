@@ -1,11 +1,11 @@
 import './CartWidget.css'
-import shoppingBag from './bag-shopping-solid.svg'
+import MaterialIcon from 'react-google-material-icons'
 
 const CartWidget = () => {
     return (
-        <div>
-            <img src={shoppingBag} alt="Cart widget" fill="#66806A" className="shoppingBag"/>
-            3
+        <div className='CartWidget'>
+            <MaterialIcon icon="shopping_bag" size={32} />
+            <span>3</span>
         </div>
     )
 }

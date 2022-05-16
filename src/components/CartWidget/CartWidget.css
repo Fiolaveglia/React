@@ -1,8 +1,7 @@
-div {
+.CartWidget {
     color: #66806A;
+    display: flex;
 }
-.shoppingBag {
-    width: 25px;
-    fill: #66806A; 
-    color: #66806A;
+span{
+    margin: 8px;
 }
