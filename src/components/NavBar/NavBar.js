@@ -1,12 +1,11 @@
 import './NavBar.css'
-import logo from './img/logo.png'
 import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
     return (
         <nav>
             <div className="navbar">
-                <img src= {logo} alt="logo"></img>
+                <img src= "./img/logo.png" alt="logo"></img>
                 <button>Florales</button>
                 <button>Citricos</button>
                 <button>Herbales</button>
@@ -16,5 +15,6 @@ const NavBar = () => {
         </nav>
     )
 }
+
 
 export default NavBar

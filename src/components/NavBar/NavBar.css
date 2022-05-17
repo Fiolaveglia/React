@@ -2,16 +2,8 @@
     font-family: 'Recoleta';
     color: #66806A;
 }
-.app {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-}
 .app-header {
     margin-top: 40px;
-}
-nav {
     width: 100%;
 }
 img {
@@ -45,6 +37,7 @@ button:active {
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 h1 {
     text-align: center;
