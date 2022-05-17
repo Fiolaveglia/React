@@ -6,10 +6,11 @@
     margin-top: 40px;
     width: 100%;
 }
-img {
+.Logo {
     width: 125px;
+    height: 125px;
 }
-button {
+.ButtonNav {
     font-size: 20px;
     margin: 40px 80px;
     background-color:#fff;
@@ -26,11 +27,11 @@ button {
     -ms-transition: all 1s;
     -o-transition: all 1s;
 }
-button:hover {
+.ButtonNav:hover {
     background-color: #66806A;
     color: #fff;
 }
-button:active {
+.ButtonNav:active {
     background-color:  #FFC286;
     color: #66806A;
 }

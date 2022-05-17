@@ -9,7 +9,7 @@ function App() {
       <header className="app-header">
         <NavBar />
         <ItemListContainer greeting="Bienvenidos al maravilloso mundo de la aromaterapia" />
-        <ItemCount />
+        <ItemCount name="Naranja"/>
       </header>
     </div>
   );
