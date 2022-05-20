@@ -1,14 +1,14 @@
 import {useState} from 'react'
 import './ItemCount.css';
 
-const ItemCount = (props) => {
-    const [count, setCount] = useState(0)
-    const stock = 10
+const ItemCount = ({stock, inicial}) => {
+    const [count, setCount] = useState(inicial)
+    
     
     const decrement = () => {
         setCount(count - 1)
-        if (count <= 0) {
-            setCount(0)
+        if (count <= inicial) {
+            setCount(inicial)
         } 
     }
 
