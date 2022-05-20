@@ -9,7 +9,7 @@ const NavBar = () => {
                 <button className='ButtonNav'>Florales</button>
                 <button className='ButtonNav'>Citricos</button>
                 <button className='ButtonNav'>Herbales</button>
-                <CartWidget/>
+                <CartWidget cantidad = {8}/>
             </div>
             <h1>AROMATERAPIA</h1>
         </nav>
