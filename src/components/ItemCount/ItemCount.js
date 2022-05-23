@@ -1,22 +1,26 @@
 import {useState} from 'react'
 import './ItemCount.css';
 
-const ItemCount = (props) => {
-    const [count, setCount] = useState(props.inicial)
+const ItemCount = ({inicial, stock, onAdd}) => {
+    const [count, setCount] = useState(inicial)
     
     
     const decrement = () => {
         setCount(count - 1)
-        if (count <= props.inicial) {
-            setCount(props.inicial)
+        if (count <= inicial) {
+            setCount(inicial)
         } 
     }
 
     const increment = () => {
         setCount(count + 1)
-        if (count === props.stock) {
-            setCount(props.stock)
+        if (count === stock) {
+            setCount(stock)
         }
+    }
+    
+    const AgregarProducto = () => {
+        onAdd (count)
     }
 
 
@@ -25,6 +29,7 @@ const ItemCount = (props) => {
                 <button className='ButtonCounter' onClick={decrement}>-</button>
                 <span className='Quantity'>{count}</span>
                 <button className='ButtonCounter' onClick={increment}>+</button>
+                <button className='AddToCart' onClick={AgregarProducto}>Agregar al carrito</button>
             </div>
     )
 }
