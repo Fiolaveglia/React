@@ -1,9 +1,9 @@
-import Productos from "../Productos/Productos";
+import ItemCard from "../ItemCard/ItemCard";
 
-function ItemList (productos) {
+function ItemList ({productos}) {
     return (
         productos.map (prod => (
-            <Productos 
+            <ItemCard 
             key = {prod.id}
             nombre = {prod.nombre}
             precio = {prod.precio}

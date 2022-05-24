@@ -2,7 +2,7 @@ import './ItemListContainer.css'
 import customFetch from '../Productos/CustomFetch'
 import Productos from '../Productos/Productos'  
 import {useState, useEffect} from 'react'
-import ItemCard from '../ItemCard/ItemCard'
+import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = (props) => {
     
@@ -18,7 +18,9 @@ const ItemListContainer = (props) => {
     return (
     <div>
         <h2>{props.greeting}</h2>
-        <ItemCard productos = {items} />
+        <div className='CardContainer'>
+            <ItemList productos = {items} />
+        </div>
     </div>)
 }
 
