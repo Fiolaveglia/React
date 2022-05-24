@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import ItemCount from "../ItemCount/ItemCount";
 
+
 function ItemCard (props) {
     
     const onAdd = (cant) => {
