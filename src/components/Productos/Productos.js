@@ -1,11 +1,11 @@
-
 const Productos = [
     {
         id: 1, 
         nombre: 'Naranja',
         precio: 1025,
         img: './img/products/Naranja.jpg',
-        stock: 12
+        stock: 12, 
+        descripcion: "Aceite esencial de Naranja "
     }, 
     {
         id: 2, 

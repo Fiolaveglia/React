@@ -13,8 +13,6 @@ const ItemListContainer = (props) => {
         .then(resultado => setItems(resultado))
     }, [items]);
 
-    console.log(items)
-
     return (
     <div>
         <h2>{props.greeting}</h2>
