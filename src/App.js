@@ -1,8 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 /*import ItemListContainer from './components/ItemListContainer/ItemListContainer';*/
-import ItemDetail from './components/ItemDetail/ItemDetail';
-
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
@@ -11,8 +10,7 @@ function App() {
         <NavBar />
         {/*<ItemListContainer greeting="Bienvenidos al maravilloso mundo de la aromaterapia" />*/}
       </header>
-    
-      <ItemDetail/>
+      <ItemDetailContainer/>
     </div>
   );
 }
