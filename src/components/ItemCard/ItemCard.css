@@ -5,3 +5,7 @@
 .text-detail {
     text-align: start;
 }
+.card-img-top {
+    width: 480px;
+    height: 355px;
+}
