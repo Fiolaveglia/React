@@ -1,11 +1,17 @@
-import Card from 'react-bootstrap/Card';
+import Card from 'react-bootstrap/Card'
+import {useState} from 'react'
+import {Link} from 'react-router-dom'
 import ItemCount from "../ItemCount/ItemCount";
 import '../ItemCard/ItemCard.css'
 
+
 const ItemDetail = (props) => {
-    
+
+    const [cantidad, setCantidad] = useState(0)
+
     const onAdd = (cant) => {
-        console.log(`Se agregaron ${cant} de productos al carrito`)
+        console.log(`Se agregaron ${cant} productos al carrito`)
+        setCantidad(cant)
     }
     
     return (
@@ -18,7 +24,7 @@ const ItemDetail = (props) => {
                     <Card.Text className="text-detail">
                         {props.detalle}
                     </Card.Text>
-                    <ItemCount stock={props.stock} inicial={0} onAdd={onAdd}/>
+                    {cantidad > 0 ? <Link to='/cart' className='ButtonDetail'>Ir al carrito</Link> : <ItemCount stock={props.stock} inicial={1} onAdd={onAdd}/>}
                 </Card.Body>
             </Card>
         </div>
