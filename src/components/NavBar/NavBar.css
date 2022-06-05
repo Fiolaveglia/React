@@ -1,6 +1,5 @@
-* {
-    font-family: 'Recoleta';
-    color: #66806A;
+nav {
+    margin-top: 20px;
 }
 .app-header {
     margin-top: 40px;
@@ -10,11 +9,17 @@
     width: 125px;
     height: 125px;
 }
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .ButtonNav {
+    text-decoration: none;
     font-size: 20px;
     margin: 40px 80px;
     background-color:#fff;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid #fff;
     -webkit-border-radius: 5px;
@@ -34,11 +39,6 @@
 .ButtonNav:active {
     background-color:  #FFC286;
     color: #66806A;
-}
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 h1 {
     text-align: center;

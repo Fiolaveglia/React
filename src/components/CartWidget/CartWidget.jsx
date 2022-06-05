@@ -1,14 +1,14 @@
 import './CartWidget.css'
-import MaterialIcon from 'react-google-material-icons'
 
 const CartWidget = (props) => {
     return (
         <div className='CartWidget'>
-            <MaterialIcon icon="shopping_bag" size={32} />
+            <img src='../cart-shopping-solid.svg' className='Cart' alt="cart"></img>
             <span className='Quantity'>{props.cantidad}</span>
         </div>
     )
 }
 
 export default CartWidget
+
 

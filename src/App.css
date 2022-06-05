@@ -3,3 +3,9 @@
   src: url(./fuentes/Recoleta-RegularDEMO.otf);
 }
 
+* {
+  font-family: 'Recoleta';
+  color: #66806A;
+}
+
+
