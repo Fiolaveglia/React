@@ -1,22 +1,3 @@
-// import './App.css';
-// import NavBar from './components/NavBar/NavBar';
-// import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-// import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-
-// function App() {
-//   return (
-//     <div className="app">
-//       <header className="app-header">
-//         <NavBar />
-//         <ItemListContainer greeting="Bienvenidos al maravilloso mundo de la aromaterapia" />
-//       </header>
-//       <ItemDetailContainer/>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -27,8 +8,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-      {/* 
-      <ItemListContainer /> */}
       <BrowserRouter>
         <header className="app-header">
           <NavBar />
@@ -37,6 +16,7 @@ function App() {
           <Route path = "/" element = {<ItemListContainer/>} />
           <Route path="/category/:categoryId" element = {<ItemListContainer />}/>
           <Route path = "/detail/:productId" element = {<ItemDetailContainer />}/>
+          <Route path="/cart" element = {<h2>Carrito de compras</h2>}/>
           <Route path = "*" element = {<h1>PAGE NOT FOUND</h1>} />
         </Routes>
       </BrowserRouter>
