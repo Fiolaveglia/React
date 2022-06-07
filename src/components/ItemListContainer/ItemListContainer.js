@@ -13,7 +13,7 @@ const ItemListContainer = (props) => {
 
     useEffect (() => {
         if (!categoryId) {
-            customFetch(2000, Productos)
+                customFetch(2000, Productos)
             .then(resp => setItems(resp))
             .catch(error => console.log(error))
             .finally(() => setLoading(false))        
