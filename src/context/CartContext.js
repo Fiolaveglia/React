@@ -47,9 +47,14 @@ export const CartContextProvider = ({children}) => {
         setCarrito(newCarrito)
     }
 
+    const limpiarCarrito = () => {
+        const newCarrito = []
+        setCarrito(newCarrito)
+    }
+
 
     return (
-        <CartContext.Provider value = {{carrito, agregarItem, obtenerCantidad, obtenerCantidadProducto, eliminarProducto}}>
+        <CartContext.Provider value = {{carrito, agregarItem, obtenerCantidad, obtenerCantidadProducto, eliminarProducto, limpiarCarrito}}>
             {children}
         </CartContext.Provider>
     )
