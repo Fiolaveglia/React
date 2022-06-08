@@ -11,7 +11,10 @@ const ItemDetail = ({id, nombre, precio, img, detalle, stock, categoria}) => {
 
     const [cantidad, setCantidad] = useState(0)
 
-    const {agregarItem} = useContext(CartContext)
+    const {agregarItem, obtenerCantidadProducto} = useContext(CartContext)
+
+    const valorInicial = obtenerCantidadProducto(id)
+    console.log(valorInicial)
 
     const onAdd = (cantidad) => {
         console.log(`Se agregaron ${cantidad} productos al carrito`)
@@ -30,8 +33,8 @@ const ItemDetail = ({id, nombre, precio, img, detalle, stock, categoria}) => {
                     <Card.Text className="text-detail">
                         {detalle}
                     </Card.Text>
-                    {cantidad > 0 ? <Link to='/cart' className='ButtonDetail Shop'>Finalizar compra</Link> : <ItemCount stock={stock} inicial={1} onAdd={onAdd}/>}
-                    {cantidad > 0 ? <Link to='/' className='ButtonDetail Shop'>Continuar comprando</Link> : <ItemListContainer/>}
+                    {cantidad > 1 ? <Link to='/cart' className='ButtonDetail Shop'>Finalizar compra</Link> : <ItemCount stock={stock} inicial={valorInicial} onAdd={onAdd}/>}
+                    {cantidad > 1 ? <Link to='/' className='ButtonDetail Shop'>Continuar comprando</Link> : <ItemListContainer/>}
                 </Card.Body>
             </Card>
         </div>
