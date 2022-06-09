@@ -3,7 +3,6 @@ import {useState, useContext} from 'react'
 import {Link} from 'react-router-dom'
 import CartContext from '../../context/CartContext';
 import ItemCount from "../ItemCount/ItemCount";
-import  ItemListContainer from "../ItemListContainer/ItemListContainer"
 import '../ItemCard/ItemCard.css'
 
 
@@ -19,7 +18,7 @@ const ItemDetail = ({id, nombre, precio, img, detalle, stock, categoria}) => {
     const onAdd = (cantidad) => {
         console.log(`Se agregaron ${cantidad} productos al carrito`)
         setCantidad(cantidad)
-        agregarItem ({id, nombre, precio, cantidad}) 
+        agregarItem ({id, nombre, precio, img, cantidad}) 
     }
     
     return (
@@ -33,8 +32,8 @@ const ItemDetail = ({id, nombre, precio, img, detalle, stock, categoria}) => {
                     <Card.Text className="text-detail">
                         {detalle}
                     </Card.Text>
-                    {cantidad > 1 ? <Link to='/cart' className='ButtonDetail Shop'>Finalizar compra</Link> : <ItemCount stock={stock} inicial={valorInicial} onAdd={onAdd}/>}
-                    {cantidad > 1 ? <Link to='/' className='ButtonDetail Shop'>Continuar comprando</Link> : <ItemListContainer/>}
+                    {cantidad > 0 ? 
+                    <Link to='/cart' className='ButtonDetail Shop'>Finalizar compra</Link> : <ItemCount stock={stock} inicial={valorInicial} onAdd={onAdd}/>}
                 </Card.Body>
             </Card>
         </div>
