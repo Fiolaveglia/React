@@ -4,7 +4,6 @@ const CartContext = createContext()
 
 export const CartContextProvider = ({children}) => {
     const [carrito, setCarrito] = useState([])
-    console.log(carrito)
 
     const agregarItem = (productoParaAgregar) => {
         /* Funcion que verifica si el producto se encuentra en el carrito, si lo encuentra le suma la cantidad, sino lo agrega*/

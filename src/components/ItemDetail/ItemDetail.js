@@ -13,10 +13,8 @@ const ItemDetail = ({id, nombre, precio, img, detalle, stock, categoria}) => {
     const {agregarItem, obtenerCantidadProducto} = useContext(CartContext)
 
     const valorInicial = obtenerCantidadProducto(id) 
-    console.log(valorInicial)
 
     const onAdd = (cantidad) => {
-        console.log(`Se agregaron ${cantidad} productos al carrito`)
         setCantidad(cantidad)
         agregarItem ({id, nombre, precio, img, cantidad}) 
     }
