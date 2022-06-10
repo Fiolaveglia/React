@@ -12,7 +12,7 @@ const CartWidget = () => {
     return (
         <Link to='/cart' className='CartWidget'>
             <img src='../cart-shopping-solid.svg' className='Cart' alt="cart"></img>
-            <span className='Quantity'>{cantidad}</span>
+            <span className='Quantity'>{cantidad === 0 ? '' : cantidad}</span>
         </Link>
     )
 }

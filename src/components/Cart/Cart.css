@@ -25,3 +25,7 @@
     justify-content: center;
     
 }
+h3.total-price {
+    text-align: end;
+    margin-right: 210px;
+}

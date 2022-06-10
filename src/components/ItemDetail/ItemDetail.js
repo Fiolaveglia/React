@@ -12,7 +12,7 @@ const ItemDetail = ({id, nombre, precio, img, detalle, stock, categoria}) => {
 
     const {agregarItem, obtenerCantidadProducto} = useContext(CartContext)
 
-    const valorInicial = obtenerCantidadProducto(id)
+    const valorInicial = obtenerCantidadProducto(id) 
     console.log(valorInicial)
 
     const onAdd = (cantidad) => {
@@ -32,8 +32,7 @@ const ItemDetail = ({id, nombre, precio, img, detalle, stock, categoria}) => {
                     <Card.Text className="text-detail">
                         {detalle}
                     </Card.Text>
-                    {cantidad > 0 ? 
-                    <Link to='/cart' className='ButtonDetail Shop'>Finalizar compra</Link> : <ItemCount stock={stock} inicial={valorInicial} onAdd={onAdd}/>}
+                    {cantidad > 0 ? <Link to='/cart' className='ButtonDetail Shop'>Finalizar compra</Link> : <ItemCount stock={stock} inicial={valorInicial === 0 ? 1 : valorInicial} onAdd={onAdd}/>}
                 </Card.Body>
             </Card>
         </div>

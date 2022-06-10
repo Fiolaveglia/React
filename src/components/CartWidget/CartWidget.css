@@ -2,6 +2,7 @@
     color: #66806A;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 .Cart{
     width: 32px;

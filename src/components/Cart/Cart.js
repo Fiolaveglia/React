@@ -6,16 +6,24 @@ import '../Cart/Cart.css'
 const Cart = () => {
 
     const {carrito, eliminarProducto, limpiarCarrito} = useContext(CartContext)
-
+    
+    const sumaTotal = () => {
+        let total = 0 
+        carrito.forEach (p => {
+            total += p.cantidad * p.precio
+        })
+        return total 
+    }
 
     return (
         <div>
             <h2>Detalle de compra</h2>
 
             <div className='detail'>
-                {carrito.map (p => {
+                { 
+                    carrito.map (p => {
                     return (
-                        <div className="columns" key={p.id}>
+                    <div className="columns" key={p.id}>
                         <div className="product-image">
                             <img src={p.img} alt= {p.nombre}/>
                         </div>
@@ -34,6 +42,10 @@ const Cart = () => {
                         )} 
                     )
                 }
+            <div>
+                <h3 className='total-price'>$ {sumaTotal()}</h3>
+            </div>
+                
             </div>
             <div className='botones'>
                 <button className='ButtonDetail' onClick={() => limpiarCarrito()} style={{margin: '20px'}}>Vaciar carrito</button>

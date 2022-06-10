@@ -11,7 +11,7 @@ const NavBar = () => {
                 <Link to = "/category/floral" className='ButtonNav' >Florales</Link>
                 <Link to = "/category/citrico" className='ButtonNav'>Citricos</Link>
                 <Link to = "/category/herbal" className='ButtonNav'>Herbales</Link>
-                <CartWidget />
+                <Link to = "/cart"><CartWidget /></Link> 
             </div>
             <h1>AROMATERAPIA</h1>
         </nav>
