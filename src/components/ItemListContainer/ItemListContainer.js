@@ -1,9 +1,10 @@
 import './ItemListContainer.css'
-import customFetch from '../Productos/CustomFetch'
-import Productos from '../Productos/Productos'  
 import ItemList from '../ItemList/ItemList'
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+import {getDocs, collection, query, where} from 'firebase/firestore'
+import {db} from '../../services/Firebase'
+
 
 const ItemListContainer = (props) => {
     
@@ -12,18 +13,21 @@ const ItemListContainer = (props) => {
     const {categoryId} = useParams()
 
     useEffect (() => {
-        if (!categoryId) {
-                customFetch(2000, Productos)
-            .then(resp => setItems(resp))
-            .catch(error => console.log(error))
-            .finally(() => setLoading(false))        
-        } else {
-            customFetch(2000, Productos)
-        .then(resp => setItems(resp.filter(p => p.categoria === categoryId)))
-        .catch(error => console.log(error))
-        .finally(() => setLoading(false))        
-        }
+
+        const collectionRef = categoryId
+            ? query(collection(db, 'Productos'), where('categoria', '==', categoryId))
+            : collection(db, 'Productos')
         
+        getDocs(collectionRef)
+            .then(resp => {
+                console.log(resp.docs)
+                const Products = resp.docs.map(doc => {
+                    return { id: doc.id, ...doc.data() }
+                })
+                setItems(Products)
+            })
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false))         
     }, [categoryId]);
 
     if (loading) {

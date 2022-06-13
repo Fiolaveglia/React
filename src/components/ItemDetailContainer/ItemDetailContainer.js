@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import Productos from '../Productos/Productos'
-import customFetch from '../Productos/CustomFetch'
+import {getDoc, doc} from 'firebase/firestore'
+import {db} from '../../services/Firebase'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import '../ItemListContainer/ItemListContainer.css'
 
@@ -12,10 +12,12 @@ const ItemDetailContainer = () => {
     const {productId} = useParams ()
 
     useEffect(() => {
-        customFetch(2000, Productos)
-        .then(resp => setDetalle(resp.find(p => p.id === productId)))
-        .catch(error => console.log(error))
-        .finally(() => setLoading(false))        
+        getDoc(doc(db, 'Productos',productId))
+        .then(resp => {
+            const producto = {id: resp.id, ...resp.data()}
+            setDetalle(producto)
+        }).catch(error => console.log(error))
+        .finally(() => setLoading(false))
 
     }, [productId])
 
