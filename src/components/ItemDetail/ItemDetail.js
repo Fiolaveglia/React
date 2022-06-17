@@ -22,11 +22,11 @@ const ItemDetail = ({id, nombre, precio, img, detalle, stock, categoria}) => {
     return (
         <div>
             <h2>Detalle del producto</h2>
-            <Card key={id} style={{ width: '35rem'}}>
+            <Card className='detail-card'key={id} style={{ width: '35rem'}}>
                 <Card.Img variant="top" className='card-img-item' src={img} alt={nombre} />
                 <Card.Body>
                     <Card.Title><h3>Aceite de {nombre}</h3></Card.Title>
-                    <Card.Title><h4>{categoria}</h4></Card.Title>
+                    <Card.Title><h6>{categoria}</h6></Card.Title>
                     <Card.Text className="text-detail">
                         {detalle}
                     </Card.Text>

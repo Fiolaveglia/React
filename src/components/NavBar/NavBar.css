@@ -15,6 +15,7 @@ nav {
     justify-content: space-around;
 }
 .ButtonNav {
+    color: #66806A !important;
     text-decoration: none;
     font-size: 20px;
     margin: 40px 80px;

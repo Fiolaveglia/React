@@ -20,7 +20,6 @@ const ItemListContainer = (props) => {
         
         getDocs(collectionRef)
             .then(resp => {
-                console.log(resp.docs)
                 const Products = resp.docs.map(doc => {
                     return { id: doc.id, ...doc.data() }
                 })

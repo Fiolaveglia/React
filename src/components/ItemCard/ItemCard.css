@@ -1,6 +1,9 @@
 .card {
     margin: 40px 20px;
 }
+.detail-card {
+    padding: 20px;
+}
 .card-img-top {
     width: 300px;
     border: 1px solid #eee;
