@@ -3,12 +3,13 @@ import {useForm} from "react-hook-form";
 import {useState, useContext} from 'react'
 import {addDoc, collection} from 'firebase/firestore'
 import {db} from '../../services/Firebase'
+import {Link} from 'react-router-dom'
 import CartContext from '../../context/CartContext'
 import Swal from 'sweetalert2'
 
 const Formulario = () => {
 
-    const { register, formState: { errors }} = useForm();
+    const { register} = useForm();
 
     const {carrito, sumaTotal, limpiarCarrito} = useContext(CartContext)
 
@@ -74,9 +75,7 @@ const Formulario = () => {
                         onChange={handleInputChange}
                         value={datos.nombre}
                     />
-                    {/*errors.nombre && <span className='text-danger text-small d-block mb-2'>{errors.nombre.message}</span>*/}
                 </label>
-                {errors.nombre?.type === 'required' && <span className='text-danger text-small d-block mb-2'>{errors.nombre.message}</span>}
                 <label>
                     Direccion
                     <input 
@@ -88,7 +87,6 @@ const Formulario = () => {
                         onChange={handleInputChange}
                         value={datos.direccion}
                     />
-                    {/*errors.direccion && <span className='text-danger text-small d-block mb-2'>{errors.direccion.message}</span>*/}
                 </label>
                 <label>
                     Telefono
@@ -101,8 +99,6 @@ const Formulario = () => {
                         onChange={handleInputChange}
                         value={datos.tel}
                     />
-                    {/*errors.tel && <span className='text-danger text-small d-block mb-2'>{errors.tel.message}</span>*/}
-
                 </label>
                 <label>
                     Correo electronico
@@ -115,9 +111,8 @@ const Formulario = () => {
                         onChange={handleInputChange}
                         value={datos.mail}
                     />
-                    {/*errors.mail && <span className='text-danger text-small d-block mb-2'>{errors.mail.message}</span>*/}
                 </label>
-                <button className='ButtonDetail' style={{width: '150px', display: 'block', margin: '0 auto'}} type='submit'  onClick={crearOrden}>Enviar</button>
+                <Link to='/' className='ButtonDetail' style={{width: '150px', display: 'block', margin: '0 auto'}} type='submit'  onClick={crearOrden}>Enviar</Link>
             </form>
         </div>
     )
