@@ -15,12 +15,7 @@ const Cart = () => {
     // const crearOrden = () => {
     //     console.log('se genero la orden')
     //     const ObjOrden = {
-    //         cliente: {
-    //             nombre: 'Fiorella Laveglia',
-    //             direccion: 'Ejido 1319 / 501',
-    //             tel: '096422000',
-    //             mail: 'fiolaveglia@gmail.com'
-    //         },
+    //         cliente: datos,
     //         items: carrito,
     //         total: sumaTotal()
     //     }
@@ -67,7 +62,7 @@ const Cart = () => {
                 <div className='botones'>
                     <button className='ButtonDetail' onClick={() => limpiarCarrito()} style={{margin: '20px'}}>Vaciar carrito</button>
                     <Link to ='/' className='ButtonDetail'  style={{margin: '20px'}}>Continuar comprando</Link>
-                    <Link to ='/order' className='ButtonDetail' style={{margin: '20px'}}>Finalizar compra</Link>
+                    <Link to ='/order' className='ButtonDetail' style={{margin: '20px'}} >Finalizar compra</Link>
                 </div>
         </div>
             }
