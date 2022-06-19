@@ -10,7 +10,7 @@ const Formulario = () => {
 
     const { register, formState: { errors }} = useForm();
 
-    const {carrito, sumaTotal} = useContext(CartContext)
+    const {carrito, sumaTotal, limpiarCarrito} = useContext(CartContext)
 
     const [datos, setDatos] = useState({
         nombre: '', 
@@ -35,7 +35,8 @@ const Formulario = () => {
                 text: `Se creo la orden con el id Nº ${id}`,
                 icon: 'success',
             })
-        }) 
+        })
+        limpiarCarrito();
     }
 
     const handleInputChange = (e) => {
